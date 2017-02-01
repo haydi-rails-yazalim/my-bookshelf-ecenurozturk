@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :book_lists
   devise_for :users
+  resources :books 
   get 'welcome/index'
 
   root 'welcome#index'
