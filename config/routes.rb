@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  get 'bookshelf/index'
+
+  get 'bookshelf/add'
+
   resources :book_lists
   devise_for :users
-  resources :books 
+  resources :books
+  
   get 'welcome/index'
 
   root 'welcome#index'
