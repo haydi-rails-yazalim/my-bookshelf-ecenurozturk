@@ -2,7 +2,8 @@
 
 <h1>Book Lists</h1>
 
-<%= link_to 'your bookshelf',:controller => :bookshelf :action => :index %>
+<%= link_to 'your bookshelf', :controller => "bookshelf",:action => "index" %>
+
 
 <table>
   <thead>
@@ -27,7 +28,7 @@
         <td><%= link_to 'Show', book_list %></td>
         <td><%= link_to 'Edit', edit_book_list_path(book_list) %></td>
         <td><%= link_to 'Destroy', book_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%= button_to 'Add to your bookshelf',:controller => :bookshelf :action => :add, :id => item %>
+        
       </tr>
     <% end %>
   </tbody>
