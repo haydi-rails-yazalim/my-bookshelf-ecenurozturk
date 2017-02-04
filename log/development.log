@@ -3489,3 +3489,260 @@ puma (3.7.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
   Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
   Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
   Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (138.0ms)
+Started GET "/book_lists/2" for 127.0.0.1 at 2017-02-04 20:00:05 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BookListsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBookList Load (0.3ms)[0m  [1m[34mSELECT  "book_lists".* FROM "book_lists" WHERE "book_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering book_lists/show.html.erb within layouts/application
+  Rendered book_lists/show.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 421ms (Views: 367.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/book_lists" for 127.0.0.1 at 2017-02-04 20:00:08 +0200
+Processing by BookListsController#index as HTML
+  Rendering book_lists/index.html.erb within layouts/application
+  [1m[36mBookList Load (0.2ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists"[0m
+  Rendered book_lists/index.html.erb within layouts/application (77.4ms)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `bookshelves_add_path' for #<#<Class:0x007ffe590f2490>:0x007ffe552511c8>):
+    28:         <td><%= link_to 'Show', book_list %></td>
+    29:         <td><%= link_to 'Edit', edit_book_list_path(book_list) %></td>
+    30:         <td><%= link_to 'Destroy', book_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    31:         <td><%= button_to 'Add to your bookshelf', bookshelves_add_path(:id => book_list.id),:controller => "bookshelf", :action => "add", method: :post %></td>
+    32:       </tr>
+    33:     <% end %>
+    34:   </tbody>
+  
+app/views/book_lists/index.html.erb:31:in `block in _app_views_book_lists_index_html_erb__4331148898471398584_70365163458020'
+app/views/book_lists/index.html.erb:21:in `_app_views_book_lists_index_html_erb__4331148898471398584_70365163458020'
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (18.8ms)
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.6ms)
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (112.2ms)
+Started GET "/book_lists" for 127.0.0.1 at 2017-02-04 20:00:14 +0200
+Processing by BookListsController#index as HTML
+  Rendering book_lists/index.html.erb within layouts/application
+  [1m[36mBookList Load (0.1ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists"[0m
+  Rendered book_lists/index.html.erb within layouts/application (77.6ms)
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `bookshelves_add_path' for #<#<Class:0x007ffe590f2490>:0x007ffe5b0039b0>):
+    28:         <td><%= link_to 'Show', book_list %></td>
+    29:         <td><%= link_to 'Edit', edit_book_list_path(book_list) %></td>
+    30:         <td><%= link_to 'Destroy', book_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    31:         <td><%= button_to 'Add to your bookshelf', bookshelves_add_path(:id => book_list.id),:controller => "bookshelf", :action => "add", method: :post %></td>
+    32:       </tr>
+    33:     <% end %>
+    34:   </tbody>
+  
+app/views/book_lists/index.html.erb:31:in `block in _app_views_book_lists_index_html_erb__4331148898471398584_70365212608760'
+app/views/book_lists/index.html.erb:21:in `_app_views_book_lists_index_html_erb__4331148898471398584_70365212608760'
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.6ms)
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (85.7ms)
+Started GET "/book_lists" for 127.0.0.1 at 2017-02-04 20:01:09 +0200
+Processing by BookListsController#index as HTML
+  Rendering book_lists/index.html.erb within layouts/application
+  [1m[36mBookList Load (0.3ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists"[0m
+  Rendered book_lists/index.html.erb within layouts/application (73.1ms)
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `bookshelves_add_path' for #<#<Class:0x007ffe59550500>:0x007ffe5953b290>):
+    28:         <td><%= link_to 'Show', book_list %></td>
+    29:         <td><%= link_to 'Edit', edit_book_list_path(book_list) %></td>
+    30:         <td><%= link_to 'Destroy', book_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    31:         <td><%= button_to 'Add to your bookshelf', bookshelves_add_path(:id => book_list.id),:controller => "bookshelf", :action => "add", method: :post %></td>
+    32:       </tr>
+    33:     <% end %>
+    34:   </tbody>
+  
+app/views/book_lists/index.html.erb:31:in `block in _app_views_book_lists_index_html_erb__4331148898471398584_70365198583760'
+app/views/book_lists/index.html.erb:21:in `_app_views_book_lists_index_html_erb__4331148898471398584_70365198583760'
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.9ms)
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ecenur/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.2ms)
+Started GET "/book_lists" for 127.0.0.1 at 2017-02-04 20:01:22 +0200
+Processing by BookListsController#index as HTML
+  Rendering book_lists/index.html.erb within layouts/application
+  [1m[36mBookList Load (0.3ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists"[0m
+  Rendered book_lists/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 39ms (Views: 33.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/bookshelves/add?id=2" for 127.0.0.1 at 2017-02-04 20:02:09 +0200
+Processing by BookshelfController#add as HTML
+  Parameters: {"authenticity_token"=>"8haIZxaXugejK2+/GmztPYTbmklF856mgH+m2IBIdT6o4Pu5LhUbfeeOBBFcpzOzxvFmQmOiWnW1tFOPDcAiXQ==", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.2ms)[0m  [1m[34mSELECT  "book_lists".* FROM "book_lists" WHERE "book_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "bookshelves" ("user_id", "book_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["book_list_id", 2], ["created_at", 2017-02-04 18:02:09 UTC], ["updated_at", 2017-02-04 18:02:09 UTC]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering bookshelf/add.html.erb within layouts/application
+  Rendered bookshelf/add.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 118ms (Views: 32.6ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/bookshelf/index" for 127.0.0.1 at 2017-02-04 20:02:25 +0200
+Processing by BookshelfController#index as HTML
+  Rendering bookshelf/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.3ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists" INNER JOIN "bookshelves" ON "book_lists"."id" = "bookshelves"."book_list_id" WHERE "bookshelves"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered bookshelf/index.html.erb within layouts/application (56.6ms)
+Completed 200 OK in 90ms (Views: 86.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/bookshelves/add?id=2" for 127.0.0.1 at 2017-02-04 20:02:32 +0200
+Processing by BookshelfController#add as HTML
+  Parameters: {"authenticity_token"=>"8haIZxaXugejK2+/GmztPYTbmklF856mgH+m2IBIdT6o4Pu5LhUbfeeOBBFcpzOzxvFmQmOiWnW1tFOPDcAiXQ==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.0ms)[0m  [1m[34mSELECT  "book_lists".* FROM "book_lists" WHERE "book_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "bookshelves" ("user_id", "book_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["book_list_id", 2], ["created_at", 2017-02-04 18:02:32 UTC], ["updated_at", 2017-02-04 18:02:32 UTC]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering bookshelf/add.html.erb within layouts/application
+  Rendered bookshelf/add.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 39ms (Views: 25.4ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/bookshelf/index" for 127.0.0.1 at 2017-02-04 20:02:36 +0200
+Processing by BookshelfController#index as HTML
+  Rendering bookshelf/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.2ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists" INNER JOIN "bookshelves" ON "book_lists"."id" = "bookshelves"."book_list_id" WHERE "bookshelves"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered bookshelf/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 40ms (Views: 35.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/bookshelves/add?id=2" for 127.0.0.1 at 2017-02-04 20:02:47 +0200
+Processing by BookshelfController#add as HTML
+  Parameters: {"authenticity_token"=>"8haIZxaXugejK2+/GmztPYTbmklF856mgH+m2IBIdT6o4Pu5LhUbfeeOBBFcpzOzxvFmQmOiWnW1tFOPDcAiXQ==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.1ms)[0m  [1m[34mSELECT  "book_lists".* FROM "book_lists" WHERE "book_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "bookshelves" ("user_id", "book_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["book_list_id", 2], ["created_at", 2017-02-04 18:02:47 UTC], ["updated_at", 2017-02-04 18:02:47 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering bookshelf/add.html.erb within layouts/application
+  Rendered bookshelf/add.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 37ms (Views: 27.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/bookshelf/index" for 127.0.0.1 at 2017-02-04 20:02:52 +0200
+Processing by BookshelfController#index as HTML
+  Rendering bookshelf/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.1ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists" INNER JOIN "bookshelves" ON "book_lists"."id" = "bookshelves"."book_list_id" WHERE "bookshelves"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered bookshelf/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 38ms (Views: 34.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/bookshelves/add?id=2" for 127.0.0.1 at 2017-02-04 20:03:22 +0200
+Processing by BookshelfController#add as HTML
+  Parameters: {"authenticity_token"=>"8haIZxaXugejK2+/GmztPYTbmklF856mgH+m2IBIdT6o4Pu5LhUbfeeOBBFcpzOzxvFmQmOiWnW1tFOPDcAiXQ==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.1ms)[0m  [1m[34mSELECT  "book_lists".* FROM "book_lists" WHERE "book_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "bookshelves" ("user_id", "book_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["book_list_id", 2], ["created_at", 2017-02-04 18:03:22 UTC], ["updated_at", 2017-02-04 18:03:22 UTC]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  Rendering bookshelf/add.html.erb within layouts/application
+  Rendered bookshelf/add.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 44ms (Views: 25.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/bookshelf/index" for 127.0.0.1 at 2017-02-04 20:03:27 +0200
+Processing by BookshelfController#index as HTML
+  Rendering bookshelf/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.1ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists" INNER JOIN "bookshelves" ON "book_lists"."id" = "bookshelves"."book_list_id" WHERE "bookshelves"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered bookshelf/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/bookshelves/add?id=2" for 127.0.0.1 at 2017-02-04 20:03:32 +0200
+Processing by BookshelfController#add as HTML
+  Parameters: {"authenticity_token"=>"8haIZxaXugejK2+/GmztPYTbmklF856mgH+m2IBIdT6o4Pu5LhUbfeeOBBFcpzOzxvFmQmOiWnW1tFOPDcAiXQ==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.0ms)[0m  [1m[34mSELECT  "book_lists".* FROM "book_lists" WHERE "book_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "bookshelves" ("user_id", "book_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["book_list_id", 2], ["created_at", 2017-02-04 18:03:32 UTC], ["updated_at", 2017-02-04 18:03:32 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering bookshelf/add.html.erb within layouts/application
+  Rendered bookshelf/add.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 28.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/bookshelf/index" for 127.0.0.1 at 2017-02-04 20:03:35 +0200
+Processing by BookshelfController#index as HTML
+  Rendering bookshelf/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.2ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists" INNER JOIN "bookshelves" ON "book_lists"."id" = "bookshelves"."book_list_id" WHERE "bookshelves"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered bookshelf/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 47ms (Views: 43.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/bookshelves/add?id=2" for 127.0.0.1 at 2017-02-04 20:03:49 +0200
+Processing by BookshelfController#add as HTML
+  Parameters: {"authenticity_token"=>"8haIZxaXugejK2+/GmztPYTbmklF856mgH+m2IBIdT6o4Pu5LhUbfeeOBBFcpzOzxvFmQmOiWnW1tFOPDcAiXQ==", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.2ms)[0m  [1m[34mSELECT  "book_lists".* FROM "book_lists" WHERE "book_lists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "bookshelves" ("user_id", "book_list_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["user_id", 1], ["book_list_id", 2], ["created_at", 2017-02-04 18:03:49 UTC], ["updated_at", 2017-02-04 18:03:49 UTC]]
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  Rendering bookshelf/add.html.erb within layouts/application
+  Rendered bookshelf/add.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 26.9ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/bookshelf/index" for 127.0.0.1 at 2017-02-04 20:03:54 +0200
+Processing by BookshelfController#index as HTML
+  Rendering bookshelf/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.1ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists" INNER JOIN "bookshelves" ON "book_lists"."id" = "bookshelves"."book_list_id" WHERE "bookshelves"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered bookshelf/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/book_lists" for 127.0.0.1 at 2017-02-04 20:13:07 +0200
+Processing by BookListsController#index as HTML
+  Rendering book_lists/index.html.erb within layouts/application
+  [1m[36mBookList Load (0.1ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists"[0m
+  Rendered book_lists/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/bookshelf/index" for 127.0.0.1 at 2017-02-04 20:13:11 +0200
+Processing by BookshelfController#index as HTML
+  Rendering bookshelf/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBookList Load (0.1ms)[0m  [1m[34mSELECT "book_lists".* FROM "book_lists" INNER JOIN "bookshelves" ON "book_lists"."id" = "bookshelves"."book_list_id" WHERE "bookshelves"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered bookshelf/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 38ms (Views: 34.4ms | ActiveRecord: 0.3ms)
+
+
