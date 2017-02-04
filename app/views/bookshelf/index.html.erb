@@ -1,3 +1,6 @@
-<h1>Bookshelf</h1>
-<p>Find me in app/views/bookshelf/index.html.erb</p>
-current_user.
+<h1>MY Bookshelf</h1>
+<%= current_user.email %>
+<br>
+<% current_user.book_lists.each do |book| %>
+  <%= book.name %>
+<% end %>

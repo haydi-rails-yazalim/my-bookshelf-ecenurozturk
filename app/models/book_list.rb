@@ -1,4 +1,4 @@
 class BookList < ApplicationRecord
-  has_many :bookshelf
-  has_many :user,through: :bookshelf
+  has_many :bookshelves
+  has_many :users,through: :bookshelves
 end

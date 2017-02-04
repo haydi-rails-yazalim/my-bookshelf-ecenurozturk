@@ -7,6 +7,7 @@ class BookListsController < ApplicationController
     @book_lists = BookList.all
   end
 
+  
   # GET /book_lists/1
   # GET /book_lists/1.json
   def show
@@ -16,6 +17,9 @@ class BookListsController < ApplicationController
   def new
     @book_list = BookList.new
   end
+
+
+
 
   # GET /book_lists/1/edit
   def edit

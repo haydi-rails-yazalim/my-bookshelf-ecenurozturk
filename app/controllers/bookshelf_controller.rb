@@ -3,5 +3,6 @@ class BookshelfController < ApplicationController
   end
 
   def add
+    Bookshelf.create(user_id: current_user.id, book_list_id: params[:id])
   end
 end

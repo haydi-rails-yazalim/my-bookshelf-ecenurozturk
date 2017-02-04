@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :book_lists
   devise_for :users
   resources :books
-  
+
+post '/bookshelves/add', to: 'bookshelves#add'
   get 'welcome/index'
 
   root 'welcome#index'
