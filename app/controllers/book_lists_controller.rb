@@ -1,13 +1,14 @@
 class BookListsController < ApplicationController
+  #http_basic_authenticate_with name: "ecenurrozturk@gmail.com", password: "ecenur", except: [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show]
   before_action :set_book_list, only: [:show, :edit, :update, :destroy]
+
 
   # GET /book_lists
   # GET /book_lists.json
   def index
     @book_lists = BookList.all
   end
-
-  
   # GET /book_lists/1
   # GET /book_lists/1.json
   def show
@@ -18,6 +19,9 @@ class BookListsController < ApplicationController
     @book_list = BookList.new
   end
 
+  def set_book_list
+      @listing = Listing.find(params[:id]) if params[:id]
+  end
 
 
 
