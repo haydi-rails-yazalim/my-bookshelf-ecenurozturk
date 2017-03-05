@@ -1,15 +1,11 @@
 Rails.application.routes.draw do
-  get 'bookshelf/index'
-
-  get 'bookshelf/add'
 
   resources :book_lists
   devise_for :users
   resources :books
 
 post '/bookshelves/add', to: 'bookshelf#add'
-
-  get 'welcome/index'
+get 'bookshelves/index', to: 'bookshelf#index'
 
   root 'welcome#index'
 
