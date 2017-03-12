@@ -1,6 +1,6 @@
 class BookListsController < ApplicationController
   #http_basic_authenticate_with name: "ecenurrozturk@gmail.com", password: "ecenur", except: [:index, :show]
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_action :authenticate_user!, :except => [:index, :show]
   before_action :set_book_list, only: [:show, :edit, :update, :destroy]
 
 
@@ -36,7 +36,7 @@ class BookListsController < ApplicationController
 
     respond_to do |format|
       if @book_list.save
-        format.html { redirect_to @book_list, notice: 'Book list was successfully created.' }
+        format.html { redirect_to book_lists_path(@book_list), notice: 'Book list was successfully created.' }
         format.json { render :show, status: :created, location: @book_list }
       else
         format.html { render :new }
